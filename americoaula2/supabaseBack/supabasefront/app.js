@@ -10,7 +10,7 @@ const modalOverlay = document.querySelector('#modal-overlay');
 const modalClose = document.querySelector('#modal-close');
 const modalCancel = document.querySelector('#modal-cancel');
 
-const API_URL = 'http://COLOQUE_O_IP_DO_BACKEND_AQUI:3000';
+const API_URL = 'http://34.204.40.113:3000';
 
 // ── Buscar e renderizar todos os produtos ─────────────────────────────────────
 async function fetchProducts() {
