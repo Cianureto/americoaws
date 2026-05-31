@@ -30,7 +30,7 @@ async function fetchProducts() {
       card.className = 'product-card';
       card.innerHTML = `
         <div class="product-info">
-          <span class="product-name">${product.name}</span>
+          <span class="product-name">${product.name} <small style="color:#94a3b8;font-weight:400">#${product.id}</small></span>
           <span class="product-desc">${product.description || '—'}</span>
           <span class="product-price">R$ ${parseFloat(product.price).toFixed(2)}</span>
         </div>
