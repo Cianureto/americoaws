@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🛒 Gerenciador de Produtos</h1>
+  </header>
+
+  <main>
+
+    <!-- Formulário de adicionar -->
+    <section class="card form-section">
+      <h2>Adicionar Produto</h2>
+      <form id="add-product-form">
+        <div class="form-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" name="name" placeholder="Nome do produto" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Descrição</label>
+          <input type="text" id="description" name="description" placeholder="Descrição do produto">
+        </div>
+        <div class="form-group">
+          <label for="price">Preço (R$)</label>
+          <input type="number" id="price" name="price" placeholder="0.00" step="0.01" min="0" required>
+        </div>
+        <button type="submit" class="btn btn-success">＋ Adicionar</button>
+      </form>
+    </section>
+
+    <!-- Busca por ID -->
+    <section class="card form-section">
+      <h2>Buscar Produto por ID</h2>
+      <form id="search-id-form">
+        <div class="form-group form-inline">
+          <input type="number" id="search-id" placeholder="Digite o ID do produto" min="1" required>
+          <button type="submit" class="btn btn-primary">🔍 Buscar</button>
+        </div>
+      </form>
+      <div id="search-result"></div>
+    </section>
+
+    <!-- Lista de produtos -->
+    <section class="products-section">
+      <h2>Produtos Cadastrados</h2>
+      <div id="products-container">
+        <p class="empty-msg" id="empty-msg">Carregando produtos...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal de edição -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal card">
+      <div class="modal-header">
+        <h2>✏️ Editar Produto</h2>
+        <button class="btn-close" id="modal-close">✕</button>
+      </div>
+      <form id="update-product-form">
+        <input type="hidden" id="update-id">
+        <div class="form-group">
+          <label for="update-name">Nome</label>
+          <input type="text" id="update-name" name="name" placeholder="Nome do produto" required>
+        </div>
+        <div class="form-group">
+          <label for="update-description">Descrição</label>
+          <input type="text" id="update-description" name="description" placeholder="Descrição do produto">
+        </div>
+        <div class="form-group">
+          <label for="update-price">Preço (R$)</label>
+          <input type="number" id="update-price" name="price" placeholder="0.00" step="0.01" min="0" required>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel">Cancelar</button>
+          <button type="submit" class="btn btn-primary">💾 Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
